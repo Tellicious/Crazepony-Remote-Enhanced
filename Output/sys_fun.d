@@ -36,3 +36,4 @@
 .\output\sys_fun.o: .\HardWareDriver\H\adc.h
 .\output\sys_fun.o: .\HardWareDriver\H\Key.h
 .\output\sys_fun.o: .\Control\H\CommUAV.h
+.\output\sys_fun.o: .\Control\H\Filt.h

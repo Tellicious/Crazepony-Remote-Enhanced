@@ -36,3 +36,4 @@
 .\output\delay.o: .\HardWareDriver\H\adc.h
 .\output\delay.o: .\HardWareDriver\H\Key.h
 .\output\delay.o: .\Control\H\CommUAV.h
+.\output\delay.o: .\Control\H\Filt.h

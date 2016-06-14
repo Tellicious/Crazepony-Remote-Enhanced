@@ -50,9 +50,8 @@ int main(void)
 	
 	LedSet(led2,1);
 	LedSet(led3,1);
-	
-	LoadRCdata();                //摇杆赋值
-  Lockflag = 0;								 //解锁标志，1表示产生了一次按键操作，0表示该按键操作已经发送到飞控
+	               
+  Lockflag = 0;								 
 	
   LedSet(led2,0);
 	LedSet(led3,0);
@@ -72,15 +71,13 @@ int main(void)
 			/*IMUcalibrate  */
 			IMUcalibrate();
 			/*remote calibrate*/
-			Remotecalibrate();
-			//       Battery=(100*Get_Adc_Average(8,15))/2600;//采集遥控电池电压，赋值飞对应的电池变量
-//       Battery=(Battery>=99)?99:Battery; 
+			RemoteCalibrate();
 		}
 
 		//50Hz loop
 		if(flag50Hz == 1)
 		{
-			LoadRCdata();
+			//LoadRCdata();
 			flag50Hz = 0;
 			
 		}
@@ -89,6 +86,9 @@ int main(void)
 		if(flag80Hz)
 		{
 			flag80Hz = 0;
+			LoadRCdata();
+			//Filter input
+			filtComputeAll();
 			(CommUAVUpload(MSP_SET_4CON))?(datasent = 1):(datasent = 0);   
 		}
 	}

@@ -120,8 +120,16 @@ int Get_Temp(void)
 
 }
 
+float GetBattVolt(void){	
+	//Battery=(100*Get_Adc_Average(8, 15))/2600;
+	//Battery=(Battery>=99)?99:Battery;
+	return (float) Get_Adc_Average(8, 15) * 8.056640625e-4;
+}
 
-
+uint8_t GetBattPerc(void){
+	float BattVolt = GetBattVolt();
+	
+}
 
 
 

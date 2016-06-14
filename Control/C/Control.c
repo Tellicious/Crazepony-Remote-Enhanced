@@ -18,7 +18,7 @@ Date: 2016-06-10
 
 #include "config.h"
 #include "adc.h"
-#include "control.h"
+#include "Control.h"
 #include "ConfigTable.h"
 #include "Led.h"
 #include "NRF24.h"
@@ -26,35 +26,34 @@ Date: 2016-06-10
 #include "CommUAV.h"
 
 
-uint16_t Throttle;
-uint16_t Roll;
-uint16_t Pitch;
-uint16_t Yaw;
+uint16_t Throttle, Roll, Pitch, Yaw;
 
-uint16_t Throttle_Calibra=0;
-uint16_t Pitch_Calibra   =0;
-uint16_t Roll_Calibra    =0;
-uint16_t Yaw_Calibra     =0;//摇杆校准值
+int16_t Throttle_Calibra=0;
+int16_t Pitch_Calibra   =0;
+int16_t Roll_Calibra    =0;
+int16_t Yaw_Calibra     =0;//摇杆校准值
 
 char Lockflag      = 0;
 char IMUcalibratflag = 0;
 
+#define CTRL_DISARMED				0xB6
+#define CTRL_ARMED					0x6B
 #define CTRL_CONSTRAIN(x)		(x<1000)?1000:((x>2000)?2000:x)
 
 
 //----------------Load rocker position via ADC---------------------//
 void LoadRCdata(void){
-      Throttle = Throttle_Calibra - ((float) Get_Adc_Average(3,15) * 0.244140625);
-			Throttle = CTRL_CONSTRAIN(Throttle);
+	Throttle = Throttle_Calibra - ((float) Get_Adc_Average(3,15) * 0.244140625);
+	Throttle = CTRL_CONSTRAIN(Throttle);
 
-      Pitch = Pitch_Calibra + ((float) Get_Adc_Average(1,15) * 0.244140625);
-      Pitch = CTRL_CONSTRAIN(Pitch);
+	Pitch = Pitch_Calibra + ((float) Get_Adc_Average(1,15) * 0.244140625);
+	Pitch = CTRL_CONSTRAIN(Pitch);
 
-      Roll = Roll_Calibra + ((float) Get_Adc_Average(0,15) * 0.244140625);
-      Roll = CTRL_CONSTRAIN(Roll);
+	Roll = Roll_Calibra + ((float) Get_Adc_Average(0,15) * 0.244140625);
+	Roll = CTRL_CONSTRAIN(Roll);
 
-      Yaw = Yaw_Calibra + ((float) Get_Adc_Average(2,15) * 0.244140625);
-      Yaw = CTRL_CONSTRAIN(Yaw);  
+	Yaw = Yaw_Calibra + ((float) Get_Adc_Average(2,15) * 0.244140625);
+	Yaw = CTRL_CONSTRAIN(Yaw);  
 }
 
 
@@ -107,7 +106,7 @@ void controlClibra(void){
 }
 
 
-static uint8_t Locksta = 0xa5;
+uint8_t ArmStatus = CTRL_DISARMED;
 
 
 //--------------Arm and disarm motors via "+" key----------------//
@@ -122,7 +121,7 @@ void KeyArmDisarmCrazepony(void)
 		cnt = 3;
 	}
 	
-	switch( Lockflag )
+	switch(Lockflag)
 	{
 		case 1:
 				//解决按键连按的毛刺
@@ -136,25 +135,25 @@ void KeyArmDisarmCrazepony(void)
 					cnt = 0;
 				}
 		
-				if(Locksta == 0xa5) 
+				if(ArmStatus == CTRL_DISARMED) 
 				{
 					for(i=0;i<5;i++)         
 					CommUAVUpload(MSP_ARM_IT);   //unlock Crazepony
-					Locksta = 0x5a;
+					ArmStatus = CTRL_ARMED;
 					Lockflag = 0;
 				}
 					
-				else if(Locksta == 0x5a )
+				else if(ArmStatus == CTRL_ARMED)
 				{
 					for(i=0;i<5;i++)         
 					CommUAVUpload(MSP_DISARM_IT);	//lock Crazepony
-					Locksta = 0xa5;
+					ArmStatus = CTRL_DISARMED;
 					Lockflag = 0;
 				}
 			break;
 		case 0:
-			if(Locksta == 0x5A)   LedSet(led5,1);
-			else if(Locksta == 0xA5) LedSet(led5,0);
+			if(ArmStatus == CTRL_ARMED)   LedSet(led5,1);
+			else if(ArmStatus == CTRL_DISARMED) LedSet(led5,0);
 			break;
 	}	
 }
@@ -164,6 +163,7 @@ uint8_t cnt_arm = 0;
 uint8_t cnt_disarm = 0;
 
 void RockerArmDisarmCrazepony(void){
+	uint8_t i;
 	// Disarm: LH rocker bottom left position
 	if((Throttle < 1050) && (Yaw < 1100)){
 		cnt_arm = 0;
@@ -173,9 +173,12 @@ void RockerArmDisarmCrazepony(void){
 			cnt_disarm = 4;
 			#ifdef UART_DEBUG
 			printf ("Disarming Motors...\r\n");
-			#endif				
+			#endif
+			for(i=0;i<4;i++){         
+				CommUAVUpload(MSP_DISARM_IT);	
+			}				
 			if(CommUAVUpload(MSP_DISARM_IT)){
-				Locksta = 0xa5; //Disarmed
+				ArmStatus = CTRL_DISARMED; //Disarmed
 				LedSet(led5,0);
 			#ifdef UART_DEBUG
 				printf("Motors disarmed!!!\r\n");
@@ -195,9 +198,12 @@ void RockerArmDisarmCrazepony(void){
 			cnt_arm = 4;
 			#ifdef UART_DEBUG
 			printf ("Arming Motors...\r\n");
-			#endif			
+			#endif
+			for(i=0;i<4;i++){         
+				CommUAVUpload(MSP_ARM_IT);	
+			}			
 			if(CommUAVUpload(MSP_ARM_IT)){
-				Locksta = 0x5a; //Armed
+				ArmStatus = CTRL_ARMED; //Armed
 				LedSet(led5,1);
 			#ifdef UART_DEBUG
 				printf("Motors armed!!!\r\n");
@@ -231,10 +237,10 @@ void IMUcalibrate(void)
 
 uint8_t cnt_rcal = 0;
 
-void Remotecalibrate(void){
+void RemoteCalibrate(void){
 	// Calibrate mode starts when holding LH rocker in bottom left position and RH rocker in bottom right position
 	uint8_t led_rccal = 0;
-	if ((Locksta == 0xa5) && (Throttle < 1050) && (Yaw < 1100) && (Pitch < 1100)&& (Roll > 1900)){
+	if ((ArmStatus == CTRL_DISARMED) && (Throttle < 1050) && (Yaw < 1100) && (Pitch < 1100)&& (Roll > 1900)){
 		cnt_rcal++;
 		// When hold for 0.4 s, the calibration starts. If hold for more than that, nothing happens
 		if (cnt_rcal == 4){
@@ -247,6 +253,9 @@ void Remotecalibrate(void){
 			}
 			delay_ms(200);
 			controlClibra();
+			
+			//Re-initialize filters
+            filtInitAll();
 		}
 	}
 	else{
