@@ -254,8 +254,11 @@ void RemoteCalibrate(void){
 			delay_ms(200);
 			controlClibra();
 			
-			//Re-initialize filters
-            filtInitAll();
+            //Re-initialize filters
+            filtInit(&filtThrottle);
+            filtInit(&filtYaw);
+            filtInit(&filtPitch);
+            filtInit(&filtRoll);
 		}
 	}
 	else{
