@@ -1,5 +1,5 @@
-.\output\uart1.o: HardWareDriver\C\UART1.c
-.\output\uart1.o: .\HardWareDriver\H\UART1.h
+.\output\uart1.o: HardWareDriver\UART1.c
+.\output\uart1.o: HardWareDriver\UART1.h
 .\output\uart1.o: .\StartUp\stm32f10x.h
 .\output\uart1.o: .\StartUp\core_cm3.h
 .\output\uart1.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
@@ -21,6 +21,6 @@
 .\output\uart1.o: .\Lib\inc\stm32f10x_wwdg.h
 .\output\uart1.o: .\Lib\inc\misc.h
 .\output\uart1.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-.\output\uart1.o: .\Control\H\Control.h
+.\output\uart1.o: .\Control\Control.h
 .\output\uart1.o: .\User_Src\stm32f10x_it.h
 .\output\uart1.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h

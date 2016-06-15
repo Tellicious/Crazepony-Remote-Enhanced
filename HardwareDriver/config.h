@@ -9,7 +9,7 @@
 #include "Tim.h"
 #include "sys_fun.h"
 #include "SPI.h"
-#include "control.h"
+#include "Control.h"
 #include "stmflash.h"
 #include "math.h"
 #include "stdio.h"

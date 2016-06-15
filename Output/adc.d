@@ -1,5 +1,5 @@
-.\output\adc.o: HardWareDriver\C\adc.c
-.\output\adc.o: .\HardWareDriver\H\adc.h
+.\output\adc.o: HardWareDriver\adc.c
+.\output\adc.o: HardWareDriver\adc.h
 .\output\adc.o: .\StartUp\stm32f10x.h
 .\output\adc.o: .\StartUp\core_cm3.h
 .\output\adc.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h

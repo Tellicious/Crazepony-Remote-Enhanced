@@ -1,5 +1,5 @@
-.\output\spi.o: HardWareDriver\C\SPI.c
-.\output\spi.o: .\HardWareDriver\H\spi.h
+.\output\spi.o: HardWareDriver\SPI.c
+.\output\spi.o: HardWareDriver\spi.h
 .\output\spi.o: .\StartUp\stm32f10x.h
 .\output\spi.o: .\StartUp\core_cm3.h
 .\output\spi.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
@@ -20,5 +20,5 @@
 .\output\spi.o: .\Lib\inc\stm32f10x_usart.h
 .\output\spi.o: .\Lib\inc\stm32f10x_wwdg.h
 .\output\spi.o: .\Lib\inc\misc.h
-.\output\spi.o: .\HardWareDriver\H\UART1.h
+.\output\spi.o: HardWareDriver\UART1.h
 .\output\spi.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h

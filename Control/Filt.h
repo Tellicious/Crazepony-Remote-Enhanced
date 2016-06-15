@@ -5,8 +5,8 @@
 typedef struct{
 	uint16_t u_old_1;
 	uint16_t u_old_2;
-	uint16_t f_old_1;
-	uint16_t f_old_2;
+	float f_old_1;
+	float f_old_2;
 } filt_vals_t;
 
 extern filt_vals_t filtThrottle, filtYaw, filtPitch, filtRoll;

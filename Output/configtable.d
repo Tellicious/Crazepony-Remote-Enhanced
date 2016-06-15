@@ -20,6 +20,6 @@
 .\output\configtable.o: .\Lib\inc\stm32f10x_usart.h
 .\output\configtable.o: .\Lib\inc\stm32f10x_wwdg.h
 .\output\configtable.o: .\Lib\inc\misc.h
-.\output\configtable.o: .\HardWareDriver\H\stmflash.h
-.\output\configtable.o: .\Control\H\Control.h
-.\output\configtable.o: .\HardWareDriver\H\NRF24.h
+.\output\configtable.o: .\HardWareDriver\stmflash.h
+.\output\configtable.o: .\Control\Control.h
+.\output\configtable.o: .\HardWareDriver\NRF24.h

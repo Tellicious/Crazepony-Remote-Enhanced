@@ -1,4 +1,4 @@
-Dependencies for Project 'Remote', Target 'Remote': (DO NOT MODIFY !)
+Dependencies for Project 'Remote', Target 'Remote Enhanced': (DO NOT MODIFY !)
 F (.\StartUp\core_cm3.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I.\StartUp -I.\User_Src -I.\Lib\inc -I.\HardWareDriver -I.\Control-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD -o .\output\core_cm3.o --omf_browse .\output\core_cm3.crf --depend .\output\core_cm3.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FE42FE)
 F (.\StartUp\system_stm32f10x.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I.\StartUp -I.\User_Src -I.\Lib\inc -I.\HardWareDriver -I.\Control-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD -o .\output\system_stm32f10x.o --omf_browse .\output\system_stm32f10x.crf --depend .\output\system_stm32f10x.d)
@@ -597,7 +597,7 @@ I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
 I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
 I (.\Lib\inc\stm32f10x_wwdg.h)(0x55AC9B51)
 I (.\Lib\inc\misc.h)(0x55AC9B51)
-F (.\Control\Control.c)(0x5761BEBC)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I.\StartUp -I.\User_Src -I.\Lib\inc -I.\HardWareDriver -I.\Control-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD -o .\output\control.o --omf_browse .\output\control.crf --depend .\output\control.d)
+F (.\Control\Control.c)(0x5761BF47)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I.\StartUp -I.\User_Src -I.\Lib\inc -I.\HardWareDriver -I.\Control-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include-I C:\Keil_v5\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD -o .\output\control.o --omf_browse .\output\control.crf --depend .\output\control.d)
 I (.\HardWareDriver\config.h)(0x5761BD79)
 I (.\StartUp\stm32f10x.h)(0x55AC9B51)
 I (.\StartUp\core_cm3.h)(0x55AC9B51)

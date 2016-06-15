@@ -1,9 +1,9 @@
-.\output\commuav.o: Control\C\CommUAV.c
-.\output\commuav.o: .\Control\H\CommUAV.h
+.\output\commuav.o: Control\CommUAV.c
+.\output\commuav.o: Control\CommUAV.h
 .\output\commuav.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 .\output\commuav.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-.\output\commuav.o: .\HardWareDriver\H\NRF24.h
-.\output\commuav.o: .\Control\H\control.h
+.\output\commuav.o: .\HardWareDriver\NRF24.h
+.\output\commuav.o: Control\control.h
 .\output\commuav.o: .\StartUp\stm32f10x.h
 .\output\commuav.o: .\StartUp\core_cm3.h
 .\output\commuav.o: .\StartUp\system_stm32f10x.h

@@ -128,7 +128,7 @@ float GetBattVolt(void){
 
 uint8_t GetBattPerc(void){
 	float BattVolt = GetBattVolt();
-	
+	return 1;
 }
 
 

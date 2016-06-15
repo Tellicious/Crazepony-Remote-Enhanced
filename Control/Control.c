@@ -43,16 +43,16 @@ char IMUcalibratflag = 0;
 
 //----------------Load rocker position via ADC---------------------//
 void LoadRCdata(void){
-	Throttle = Throttle_Calibra - ((float) Get_Adc_Average(3,15) * 0.244140625);
+	Throttle = Throttle_Calibra - ((float) Get_Adc_Average(3,20) * 1000 / 4096);
 	Throttle = CTRL_CONSTRAIN(Throttle);
 
-	Pitch = Pitch_Calibra + ((float) Get_Adc_Average(1,15) * 0.244140625);
+	Pitch = Pitch_Calibra + ((float) Get_Adc_Average(1,20) * 1000 / 4096);
 	Pitch = CTRL_CONSTRAIN(Pitch);
 
-	Roll = Roll_Calibra + ((float) Get_Adc_Average(0,15) * 0.244140625);
+	Roll = Roll_Calibra + ((float) Get_Adc_Average(0,20) * 1000/ 4096);
 	Roll = CTRL_CONSTRAIN(Roll);
 
-	Yaw = Yaw_Calibra + ((float) Get_Adc_Average(2,15) * 0.244140625);
+	Yaw = Yaw_Calibra + ((float) Get_Adc_Average(2,20) * 1000 / 4096);
 	Yaw = CTRL_CONSTRAIN(Yaw);  
 }
 
@@ -61,7 +61,7 @@ void LoadRCdata(void){
 int8_t ClibraFlag;
 
 void controlClibra(void){
-	static u8 i;
+	static uint8_t i;
 	uint16_t sum[4] = {0,0,0,0};
 	static int8_t lednum = 1;
   static int8_t clibrasumNum = 20;
@@ -92,7 +92,7 @@ void controlClibra(void){
 
 
 		LoadRCdata();
-		if((Throttle >= 1510) || (Throttle <= 1490) || (Pitch >= 1510) || (Pitch <= 1490) || (Roll >= 1510) || (Roll <= 1490) || (Yaw >= 1510) || (Yaw <= 1490))
+		if((Throttle >= 1502) || (Throttle <= 1498) || (Pitch >= 1502) || (Pitch <= 1498) || (Roll >= 1502) || (Roll <= 1498) || (Yaw >= 1502) || (Yaw <= 1498))
 						ClibraFlag = FAIL;
 		else {		
 			ClibraFlag = OK;
@@ -110,53 +110,75 @@ uint8_t ArmStatus = CTRL_DISARMED;
 
 
 //--------------Arm and disarm motors via "+" key----------------//
-static u8 cnt = 3;
+/*static u8 cnt = 3;
 
 void KeyArmDisarmCrazepony(void)
 {
-	u8 i;
+	uint8_t i;
 	
 	if(0 == ++cnt){
-		//防止数据溢出
+		// this to prevent overflow
 		cnt = 3;
 	}
 	
-	switch(Lockflag)
-	{
-		case 1:
-				//解决按键连按的毛刺
-				//本函数会被主循环10Hz调用，测试发现cnt为1或者2的时候，（200ms以下），属于按键毛刺，应该剔除
-				if(cnt < 3){
-					printf("invalid key press:%d\n",cnt);
-					cnt = 0;
-					Lockflag = 0;
+	if(Lockflag){
+		if(cnt < 3){
+			// this to debounce key presses
+			printf("invalid key press:%d\n",cnt);
+			cnt = 0;
+			Lockflag = 0;
+		}else{
+			cnt = 0;
+		}
+
+		if(ArmStatus == CTRL_DISARMED) 
+		{
+			#ifdef UART_DEBUG
+			printf ("Arming Motors...\r\n");
+			#endif
+			for(i=0;i<5;i++){         
+				if(!CommUAVUpload(MSP_ARM_IT)){
 					break;
-				}else{
-					cnt = 0;
+				}	
+			}			
+			if(i == 5){
+				ArmStatus = CTRL_ARMED; //Armed
+				LedSet(led5,1);
+				Lockflag = 0;
+			#ifdef UART_DEBUG
+				printf("Motors armed!!!\r\n");
+			}
+
+			else {
+				printf("Motors cannot be armed!!!\r\n");
+			#endif
+			}
+		}
+			
+		else if(ArmStatus == CTRL_ARMED)
+		{
+			#ifdef UART_DEBUG
+			printf ("Disarming Motors...\r\n");
+			#endif
+			for(i=0;i<5;i++){         
+				if(!CommUAVUpload(MSP_DISARM_IT)){
+						break;
 				}
-		
-				if(ArmStatus == CTRL_DISARMED) 
-				{
-					for(i=0;i<5;i++)         
-					CommUAVUpload(MSP_ARM_IT);   //unlock Crazepony
-					ArmStatus = CTRL_ARMED;
-					Lockflag = 0;
-				}
-					
-				else if(ArmStatus == CTRL_ARMED)
-				{
-					for(i=0;i<5;i++)         
-					CommUAVUpload(MSP_DISARM_IT);	//lock Crazepony
-					ArmStatus = CTRL_DISARMED;
-					Lockflag = 0;
-				}
-			break;
-		case 0:
-			if(ArmStatus == CTRL_ARMED)   LedSet(led5,1);
-			else if(ArmStatus == CTRL_DISARMED) LedSet(led5,0);
-			break;
-	}	
-}
+			}				
+			if(i == 5){
+				ArmStatus = CTRL_DISARMED; //Disarmed
+				LedSet(led5,0);
+				Lockflag = 0;
+			#ifdef UART_DEBUG
+				printf("Motors disarmed!!!\r\n");
+			}
+			else {
+				printf("Motors cannot be disarmed!!!\r\n");
+			#endif
+			}
+		}
+	}
+}*/
 
 //----------------Arm and disarm motors via rocker-------------------//
 uint8_t cnt_arm = 0;
@@ -174,12 +196,15 @@ void RockerArmDisarmCrazepony(void){
 			#ifdef UART_DEBUG
 			printf ("Disarming Motors...\r\n");
 			#endif
-			for(i=0;i<4;i++){         
-				CommUAVUpload(MSP_DISARM_IT);	
+			for(i=0;i<5;i++){         
+				if(!CommUAVUpload(MSP_DISARM_IT)){
+						break;
+				}
 			}				
-			if(CommUAVUpload(MSP_DISARM_IT)){
+			if(i == 5){
 				ArmStatus = CTRL_DISARMED; //Disarmed
 				LedSet(led5,0);
+				Lockflag = 0;
 			#ifdef UART_DEBUG
 				printf("Motors disarmed!!!\r\n");
 			}
@@ -199,12 +224,15 @@ void RockerArmDisarmCrazepony(void){
 			#ifdef UART_DEBUG
 			printf ("Arming Motors...\r\n");
 			#endif
-			for(i=0;i<4;i++){         
-				CommUAVUpload(MSP_ARM_IT);	
+			for(i=0;i<5;i++){         
+				if(!CommUAVUpload(MSP_ARM_IT)){
+					break;
+				}	
 			}			
-			if(CommUAVUpload(MSP_ARM_IT)){
+			if(i == 5){
 				ArmStatus = CTRL_ARMED; //Armed
 				LedSet(led5,1);
+				Lockflag = 0;
 			#ifdef UART_DEBUG
 				printf("Motors armed!!!\r\n");
 			}
@@ -254,11 +282,11 @@ void RemoteCalibrate(void){
 			delay_ms(200);
 			controlClibra();
 			
-            //Re-initialize filters
-            filtInit(&filtThrottle);
-            filtInit(&filtYaw);
-            filtInit(&filtPitch);
-            filtInit(&filtRoll);
+			//Re-initialize filters
+			filtInit(&filtThrottle);
+			filtInit(&filtYaw);
+			filtInit(&filtPitch);
+			filtInit(&filtRoll);
 		}
 	}
 	else{

@@ -5,7 +5,7 @@
 void LoadRCdata(void);
 void controlClibra(void);
 void RockerArmDisarmCrazepony(void);
-void KeyArmDisarmCrazepony(void);
+//void KeyArmDisarmCrazepony(void);
 void IMUcalibrate(void);
 void RemoteCalibrate(void);
 

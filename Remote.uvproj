@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Remote</TargetName>
+      <TargetName>Remote Enhanced</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -343,7 +343,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
@@ -361,7 +361,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER, STM32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>.\StartUp;.\User_Src;.\Lib\inc;.\HardWareDriver\BMP085;.\HardWareDriver\C;.\HardWareDriver\H;.\Control\C;.\Control\H</IncludePath>
+              <IncludePath>.\StartUp;.\User_Src;.\Lib\inc;.\HardWareDriver;.\Control</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -427,47 +427,47 @@
             <File>
               <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\delay.c</FilePath>
+              <FilePath>.\HardWareDriver\delay.c</FilePath>
             </File>
             <File>
               <FileName>Led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\Led.c</FilePath>
+              <FilePath>.\HardWareDriver\Led.c</FilePath>
             </File>
             <File>
               <FileName>Tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\Tim.c</FilePath>
+              <FilePath>.\HardWareDriver\Tim.c</FilePath>
             </File>
             <File>
               <FileName>stmflash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\stmflash.c</FilePath>
+              <FilePath>.\HardWareDriver\stmflash.c</FilePath>
             </File>
             <File>
               <FileName>UART1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\UART1.c</FilePath>
+              <FilePath>.\HardWareDriver\UART1.c</FilePath>
             </File>
             <File>
               <FileName>adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\adc.c</FilePath>
+              <FilePath>.\HardWareDriver\adc.c</FilePath>
             </File>
             <File>
               <FileName>Key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\Key.c</FilePath>
+              <FilePath>.\HardWareDriver\Key.c</FilePath>
             </File>
             <File>
               <FileName>SPI.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\SPI.c</FilePath>
+              <FilePath>.\HardWareDriver\SPI.c</FilePath>
             </File>
             <File>
               <FileName>NRF24.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWareDriver\C\NRF24.c</FilePath>
+              <FilePath>.\HardWareDriver\NRF24.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -552,17 +552,17 @@
             <File>
               <FileName>Control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Control\C\Control.c</FilePath>
+              <FilePath>.\Control\Control.c</FilePath>
             </File>
             <File>
               <FileName>CommUAV.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Control\C\CommUAV.c</FilePath>
+              <FilePath>.\Control\CommUAV.c</FilePath>
             </File>
             <File>
               <FileName>Filt.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Control\C\Filt.c</FilePath>
+              <FilePath>.\Control\Filt.c</FilePath>
             </File>
           </Files>
         </Group>

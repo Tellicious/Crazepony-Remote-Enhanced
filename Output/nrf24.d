@@ -1,7 +1,7 @@
-.\output\nrf24.o: HardWareDriver\C\NRF24.c
-.\output\nrf24.o: .\HardWareDriver\H\NRF24.h
+.\output\nrf24.o: HardWareDriver\NRF24.c
+.\output\nrf24.o: HardWareDriver\NRF24.h
 .\output\nrf24.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
-.\output\nrf24.o: .\HardWareDriver\H\spi.h
+.\output\nrf24.o: HardWareDriver\spi.h
 .\output\nrf24.o: .\StartUp\stm32f10x.h
 .\output\nrf24.o: .\StartUp\core_cm3.h
 .\output\nrf24.o: .\StartUp\system_stm32f10x.h
@@ -24,5 +24,5 @@
 .\output\nrf24.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 .\output\nrf24.o: .\User_Src\ConfigTable.h
 .\output\nrf24.o: .\User_Src\stm32f10x_it.h
-.\output\nrf24.o: .\HardWareDriver\H\delay.h
+.\output\nrf24.o: HardWareDriver\delay.h
 .\output\nrf24.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h

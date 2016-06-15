@@ -1,5 +1,5 @@
-.\output\stmflash.o: HardWareDriver\C\stmflash.c
-.\output\stmflash.o: .\HardWareDriver\H\stmflash.h
+.\output\stmflash.o: HardWareDriver\stmflash.c
+.\output\stmflash.o: HardWareDriver\stmflash.h
 .\output\stmflash.o: .\StartUp\stm32f10x.h
 .\output\stmflash.o: .\StartUp\core_cm3.h
 .\output\stmflash.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
@@ -20,6 +20,6 @@
 .\output\stmflash.o: .\Lib\inc\stm32f10x_usart.h
 .\output\stmflash.o: .\Lib\inc\stm32f10x_wwdg.h
 .\output\stmflash.o: .\Lib\inc\misc.h
-.\output\stmflash.o: .\HardWareDriver\H\delay.h
-.\output\stmflash.o: .\HardWareDriver\H\UART1.h
+.\output\stmflash.o: HardWareDriver\delay.h
+.\output\stmflash.o: HardWareDriver\UART1.h
 .\output\stmflash.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
