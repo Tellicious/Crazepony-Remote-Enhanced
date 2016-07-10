@@ -3,7 +3,7 @@
 
 #include "stdint.h"
 
-//---------UAV control cmd
+//---------UAV control cmd---------//
 #define MSP_ARM_IT	          5
 #define MSP_DISARM_IT	        6
 #define MSP_SET_4CON	        7
@@ -13,7 +13,7 @@
 #define MSP_STOP_HEAD_FREE	  13
 #define MSP_AUTO_LAND_DISARM  9        
 #define MSP_ACC_CALI	        205
-//对外接口函数
+
 uint8_t CommUAVUpload(unsigned char cmd);
 
 

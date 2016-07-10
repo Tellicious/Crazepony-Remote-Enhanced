@@ -3,25 +3,17 @@
 //
 #include "stm32f10x.h"
 
-
-
-#define OK   0xa5
-#define FAIL 0x5a
-
-
-typedef struct config_table_tt
-{
+typedef struct config_table_tt {
 uint16_t version;
-uint16_t thrCalibraVaule;
-uint16_t pitCalibraVaule;
-uint16_t rollCalibraVaule;
-uint16_t yawCalibraVaule;
-uint16_t Clibra_flag;
+uint16_t thrCalibraValue;
+uint16_t pitchCalibraValue;
+uint16_t rollCalibraValue;
+uint16_t yawCalibraValue;
 uint16_t tx_addr;
 }config_table_t;
 
 extern config_table_t table;	
-extern uint8_t gParamsSaveEEPROMRequset;
+extern uint8_t gParamsSaveEEPROMRequest;
 
 void LoadParamsFromEEPROM(void);
 void ParamSetDefault(void) ;

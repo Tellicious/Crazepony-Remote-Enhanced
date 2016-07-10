@@ -11,7 +11,7 @@
 //用来存放EEPROM列表上的存放的参数变量的信息
 config_table_t table;				     //tobe improved: config mean in const / eeprom.
 //请求保存参数到EEPROM的信号量
-uint8_t gParamsSaveEEPROMRequset=0;
+uint8_t gParamsSaveEEPROMRequest=0;
 
 #define EEPROM_DEFAULT_VERSION 1
 
@@ -58,22 +58,20 @@ void TableWriteEEPROM(void)
 void TableToParam(void)
 {
 	    
-	    Throttle_Calibra = table.thrCalibraVaule;
-			Pitch_Calibra = table.pitCalibraVaule;
-	    Roll_Calibra = table.rollCalibraVaule;
-	    Yaw_Calibra = table.yawCalibraVaule;
-	    ClibraFlag  = table.Clibra_flag;
+	    Throttle_Calibra = table.thrCalibraValue;
+			Pitch_Calibra = table.pitchCalibraValue;
+	    Roll_Calibra = table.rollCalibraValue;
+	    Yaw_Calibra = table.yawCalibraValue;
 			NRF24_tx_address[4] = (uint8_t)table.tx_addr;
 }
 
 void ParamToTable(void)
 {
 	table.version          = EEPROM_DEFAULT_VERSION;
-	table.thrCalibraVaule  = Throttle_Calibra;
-	table.pitCalibraVaule  = Pitch_Calibra;
-	table.rollCalibraVaule = Roll_Calibra;
-	table.yawCalibraVaule  = Yaw_Calibra;
-	table.Clibra_flag      = ClibraFlag;
+	table.thrCalibraValue  = Throttle_Calibra;
+	table.pitchCalibraValue  = Pitch_Calibra;
+	table.rollCalibraValue = Roll_Calibra;
+	table.yawCalibraValue  = Yaw_Calibra;
 	table.tx_addr					 = (uint16_t)NRF24_tx_address[4];
 
 }
@@ -110,6 +108,5 @@ void ParamSetDefault(void)
 			Pitch_Calibra 				= 0;
 	    Roll_Calibra 					= 0;
 	    Yaw_Calibra 					= 0;
-	    ClibraFlag            = FAIL;
 			NRF24_tx_address[4]					= 0x00;
 }

@@ -1,6 +1,6 @@
 #include "Filt.h"
-#include "stdint.h"
-#include "config.h"
+#include "Config_Params.h"
+#include "math.h"
 
 // FIR
 /*float filt_c1 = 0.22223;  //Cut-off around 3 Hz with an 80Hz loop

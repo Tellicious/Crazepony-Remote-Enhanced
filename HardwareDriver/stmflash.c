@@ -31,12 +31,14 @@ void STMFLASH_Unlock(void)
 {
   FLASH->KEYR=FLASH_KEY1;//写入解锁序列.
   FLASH->KEYR=FLASH_KEY2;
+  //FLASH_Unlock();
   printf("Flash unlock success...\r\n");
 }
 //flash上锁
 void STMFLASH_Lock(void)
 {
   FLASH->CR|=1<<7;//上锁
+  //FLASH_Lock();
 }
 //得到FLASH状态
 u8 STMFLASH_GetStatus(void)
@@ -82,6 +84,7 @@ u8 STMFLASH_ErasePage(u32 paddr)
 			FLASH->CR&=~(1<<1);//清除页擦除标志.
 		}
 	}
+	//FLASH_ErasePage(paddr);
 	return res;
 }
 //在FLASH指定地址写入半字
@@ -102,6 +105,7 @@ u8 STMFLASH_WriteHalfWord(u32 faddr, u16 dat)
 			FLASH->CR&=~(1<<0);//清除PG位.
 		}
 	} 
+	//FLASH_ProgramHalfWord(faddr, dat);
 	return res;
 } 
 //读取指定地址的半字(16位数据) 
@@ -204,19 +208,3 @@ void Test_Write(u32 WriteAddr,u16 WriteData)
 {
 	STMFLASH_Write(WriteAddr,&WriteData,1);//写入一个字 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

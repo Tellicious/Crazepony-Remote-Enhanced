@@ -1,0 +1,480 @@
+Dependencies for Project 'Remote Enhanced', Target 'Remote Enhanced': (DO NOT MODIFY !)
+F (.\StartUp\core_cm3.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\core_cm3.o --omf_browse .\output\core_cm3.crf --depend .\output\core_cm3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+F (.\StartUp\system_stm32f10x.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\system_stm32f10x.o --omf_browse .\output\system_stm32f10x.crf --depend .\output\system_stm32f10x.d)
+I (StartUp\stm32f10x.h)(0x577D5B75)
+I (StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\StartUp\startup_stm32f10x_md.s)(0x55AC9B51)(--cpu Cortex-M3 -g --apcs=interwork -I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 520" --pd "STM32F10X_MD SETA 1"--list .\list\startup_stm32f10x_md.lst --xref -o .\output\startup_stm32f10x_md.o --depend .\output\startup_stm32f10x_md.d)
+F (.\HardWareDriver\Init_Config.c)(0x57821043)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\init_config.o --omf_browse .\output\init_config.crf --depend .\output\init_config.d)
+I (HardWareDriver\Init_Config.h)(0x57801E49)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_it.h)(0x5754680B)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+F (.\HardWareDriver\delay.c)(0x57794FA3)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\delay.o --omf_browse .\output\delay.crf --depend .\output\delay.d)
+I (HardWareDriver\delay.h)(0x57794F46)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\User_Src\stm32f10x_it.h)(0x5754680B)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\HardWareDriver\stmflash.c)(0x577D5D47)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stmflash.o --omf_browse .\output\stmflash.crf --depend .\output\stmflash.d)
+I (HardWareDriver\stmflash.h)(0x577D5D5D)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (HardWareDriver\delay.h)(0x57794F46)
+I (HardWareDriver\UART1.h)(0x5780EC45)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+F (.\HardWareDriver\UART1.c)(0x5780F03D)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\uart1.o --omf_browse .\output\uart1.crf --depend .\output\uart1.d)
+I (HardWareDriver\UART1.h)(0x5780EC45)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\HardWareDriver\ADC.c)(0x5780F142)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\adc.o --omf_browse .\output\adc.crf --depend .\output\adc.d)
+I (HardWareDriver\ADC.h)(0x5780F14A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\HardWareDriver\NRF24.c)(0x578211D0)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\nrf24.o --omf_browse .\output\nrf24.crf --depend .\output\nrf24.d)
+I (HardWareDriver\NRF24.h)(0x5754686D)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+I (.\User_Src\ConfigTable.h)(0x576994C0)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_it.h)(0x5754680B)
+I (HardWareDriver\delay.h)(0x57794F46)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE973E)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+F (.\HardWareDriver\Interrupt_Config.c)(0x57821051)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\interrupt_config.o --omf_browse .\output\interrupt_config.crf --depend .\output\interrupt_config.d)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+I (HardWareDriver\ADC.h)(0x5780F14A)
+I (HardWareDriver\NRF24.h)(0x5754686D)
+I (HardWareDriver\UART1.h)(0x5780EC45)
+F (.\User_Src\main.c)(0x5782221D)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (User_Src\Config_Params.h)(0x5782211F)
+I (.\HardWareDriver\ADC.h)(0x5780F14A)
+I (.\Control\Control.h)(0x5780EB8A)
+I (.\HardWareDriver\Init_Config.h)(0x57801E49)
+I (.\Control\Filt.h)(0x5780F2B3)
+I (.\HardWareDriver\NRF24.h)(0x5754686D)
+I (.\Control\CommUAV.h)(0x57698A66)
+I (.\HardWareDriver\stmflash.h)(0x577D5D5D)
+I (User_Src\ConfigTable.h)(0x576994C0)
+F (.\User_Src\stm32f10x_it.c)(0x5754680E)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_it.o --omf_browse .\output\stm32f10x_it.crf --depend .\output\stm32f10x_it.d)
+I (User_Src\stm32f10x_it.h)(0x5754680B)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\User_Src\ConfigTable.c)(0x57699484)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\configtable.o --omf_browse .\output\configtable.crf --depend .\output\configtable.d)
+I (User_Src\ConfigTable.h)(0x576994C0)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\HardWareDriver\stmflash.h)(0x577D5D5D)
+I (.\Control\Control.h)(0x5780EB8A)
+I (.\HardWareDriver\NRF24.h)(0x5754686D)
+F (.\User_Src\Config_Params.h)(0x5782211F)()
+F (.\Lib\src\misc.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\misc.o --omf_browse .\output\misc.crf --depend .\output\misc.d)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_gpio.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_gpio.o --omf_browse .\output\stm32f10x_gpio.crf --depend .\output\stm32f10x_gpio.d)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_rcc.c)(0x577AA747)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_rcc.o --omf_browse .\output\stm32f10x_rcc.crf --depend .\output\stm32f10x_rcc.d)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_tim.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_tim.o --omf_browse .\output\stm32f10x_tim.crf --depend .\output\stm32f10x_tim.d)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_usart.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_usart.o --omf_browse .\output\stm32f10x_usart.crf --depend .\output\stm32f10x_usart.d)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_spi.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_spi.o --omf_browse .\output\stm32f10x_spi.crf --depend .\output\stm32f10x_spi.d)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_pwr.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_pwr.o --omf_browse .\output\stm32f10x_pwr.crf --depend .\output\stm32f10x_pwr.d)
+I (.\Lib\inc\stm32f10x_pwr.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_exti.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_exti.o --omf_browse .\output\stm32f10x_exti.crf --depend .\output\stm32f10x_exti.d)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_adc.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_adc.o --omf_browse .\output\stm32f10x_adc.crf --depend .\output\stm32f10x_adc.d)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Lib\src\stm32f10x_flash.c)(0x55AC9B51)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\stm32f10x_flash.o --omf_browse .\output\stm32f10x_flash.crf --depend .\output\stm32f10x_flash.d)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+F (.\Control\Control.c)(0x5780F2F1)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\control.o --omf_browse .\output\control.crf --depend .\output\control.d)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\HardWareDriver\ADC.h)(0x5780F14A)
+I (Control\Filt.h)(0x5780F2B3)
+I (Control\Control.h)(0x5780EB8A)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\User_Src\ConfigTable.h)(0x576994C0)
+I (.\HardWareDriver\NRF24.h)(0x5754686D)
+I (.\HardWareDriver\delay.h)(0x57794F46)
+I (Control\CommUAV.h)(0x57698A66)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+F (.\Control\CommUAV.c)(0x5780EB6A)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\commuav.o --omf_browse .\output\commuav.crf --depend .\output\commuav.d)
+I (Control\CommUAV.h)(0x57698A66)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE973E)
+I (.\HardWareDriver\NRF24.h)(0x5754686D)
+I (Control\control.h)(0x5780EB8A)
+I (.\StartUp\stm32f10x.h)(0x577D5B75)
+I (.\StartUp\core_cm3.h)(0x55AC9B51)
+I (.\StartUp\system_stm32f10x.h)(0x55AC9B51)
+I (.\User_Src\stm32f10x_conf.h)(0x577D5BE7)
+I (.\Lib\inc\stm32f10x_adc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_dma.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_exti.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_flash.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_gpio.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_i2c.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rcc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_rtc.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_spi.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_tim.h)(0x55AC9B51)
+I (.\Lib\inc\stm32f10x_usart.h)(0x55AC9B51)
+I (.\Lib\inc\misc.h)(0x55AC9B51)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+F (.\Control\Filt.c)(0x5780F3C6)(-c --cpu Cortex-M3 -g -O3 --apcs=interwork -I .\StartUp -I .\User_Src -I .\Lib\inc -I .\HardWareDriver -I .\Control-I \\psf\Home\GitHub\Crazepony-Remote-Enhanced\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\filt.o --omf_browse .\output\filt.crf --depend .\output\filt.d)
+I (Control\Filt.h)(0x5780F2B3)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE973E)
+I (.\User_Src\Config_Params.h)(0x5782211F)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x56FE9736)

@@ -1,7 +1,7 @@
 .\output\commuav.o: Control\CommUAV.c
 .\output\commuav.o: Control\CommUAV.h
-.\output\commuav.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
-.\output\commuav.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\output\commuav.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\commuav.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\commuav.o: .\HardWareDriver\NRF24.h
 .\output\commuav.o: Control\control.h
 .\output\commuav.o: .\StartUp\stm32f10x.h
@@ -10,7 +10,6 @@
 .\output\commuav.o: .\User_Src\stm32f10x_conf.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_adc.h
 .\output\commuav.o: .\StartUp\stm32f10x.h
-.\output\commuav.o: .\Lib\inc\stm32f10x_can.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_dma.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_exti.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_flash.h
@@ -21,5 +20,5 @@
 .\output\commuav.o: .\Lib\inc\stm32f10x_spi.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_tim.h
 .\output\commuav.o: .\Lib\inc\stm32f10x_usart.h
-.\output\commuav.o: .\Lib\inc\stm32f10x_wwdg.h
 .\output\commuav.o: .\Lib\inc\misc.h
+.\output\commuav.o: .\User_Src\Config_Params.h

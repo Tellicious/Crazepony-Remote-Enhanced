@@ -6,15 +6,17 @@
 //
 
 #include "NRF24.h"
-#include "spi.h"
 #include "stdio.h"
 #include "ConfigTable.h"
 #include "stm32f10x_it.h"
 #include "delay.h"
 #include "string.h"
+#include "Config_Params.h"
 
-#define NRF24_CEpin_LOW		SPI_CE_L()
-#define NRF24_CEpin_HIGH	SPI_CE_H()
+#define SPI_CSN_H()  GPIO_SetBits(GPIOA, GPIO_Pin_4)
+#define SPI_CSN_L()  GPIO_ResetBits(GPIOA, GPIO_Pin_4)
+#define NRF24_CEpin_LOW		GPIO_ResetBits(GPIOA, GPIO_Pin_15)
+#define NRF24_CEpin_HIGH	GPIO_SetBits(GPIOA, GPIO_Pin_15)
 #define NRF24_DELAYms(x)	delay_ms(x)
 #define NRF24_DELAYus(x)	delay_us(x)
 
@@ -120,6 +122,14 @@ uint32_t NRF24_txRxDelay; // Var for adjusting delays depending on DataRate
 #define NRF24_MIN(a,b) (a<b?a:b)
 #define NRF24_CONSTRAIN(a,min,max) ((a<min)?(min):((a>max)?(max):(a)))
 //==================================Auxiliary Functions========================================//
+//--------------------SPI write and read------------------------//
+uint8_t SPI_RW(uint8_t dat) { 
+    while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET); 
+    SPI_I2S_SendData(SPI1, dat); 
+    while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_RXNE) == RESET);  
+    return SPI_I2S_ReceiveData(SPI1); 
+}
+
 //---------------Read one register from the SPI-----------------//
 uint8_t NRF24_readRegister(uint8_t thisRegister) {
 	uint8_t inByte = 0;   	// incoming byte
@@ -217,13 +227,14 @@ uint8_t NRF24_read_payload(void* buf, uint8_t data_len){
 void NRF24_init(void){
     // Initialize pins
 	uint64_t tmp = 0;
-	SPI1_INIT();
+	//SPI1_INIT();
 	NRF24_CEpin_LOW;
 	memcpy(NRF24_rx_0_address, &tmp, 5);
 	if (NRF24_tx_address[4] == 0x00){
 		NRF24_RandTXAddr();
 	}
 }
+
 //====================================Public Members=========================================//
 //------------------------Configure radio-------------------------//
 uint8_t NRF24_config(uint8_t channel, uint8_t power_level, uint8_t data_rate, uint8_t payload_size, uint8_t dyn_payload, uint8_t addr_width, uint8_t CRC_length, uint8_t auto_ack_all, uint8_t delay_retr, uint8_t count_retr){
