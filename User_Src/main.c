@@ -23,6 +23,7 @@ main.c file
 #include "CommUAV.h"
 #include "stmflash.h"
 #include "ConfigTable.h"
+#include "UART1.h"
 
 int main(void) {
 	static uint8_t datasent;
@@ -30,6 +31,9 @@ int main(void) {
 	HardwareInit();
 	STMFLASH_Unlock();            
   LoadParamsFromEEPROM();
+	#ifdef UART1_USE_INTERRUPTS
+	UartInitVals();
+	#endif
 	NRF24_config(40, NRF24_PA_MAX, NRF24_2MBPS, 32, NRF24_DIS_DYN_PYL, NRF24_ADDR_5, NRF24_CRC_16, NRF24_EN_AUT_ACK, NRF24_ARD_500, NRF24_ARC_15);
 	NRF24_reopenWritingPipe();
 	NRF24_startTransmitter();
@@ -50,12 +54,8 @@ int main(void) {
 			flag10Hz = 0;
 			/*status led*/
 			GPIO_WriteBit(signalLED, (BitAction) (datasent ? (NRF24_checkRPD() ? 1: NOT_signalLED) : 0));
-			/*crazepony Lock*/
-			RockerArmDisarmCrazepony();
-			/*IMUcalibrate  */
-			RockersIMUCalibrate();
-			/*remote calibrate*/
-			RockersRCCalibrate();
+			/*Command Crazepony via rockers combinations: arming and disarming Motors, IMU calibration, rockers calibration*/
+			RockersCommands();
 			/*Battery level check*/
 			GPIO_WriteBit(led4, (BitAction) ((GetBattVal() <= 1) ? NOT_led4 : 1));
 		}

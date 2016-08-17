@@ -26,3 +26,4 @@
 .\output\main.o: .\Control\CommUAV.h
 .\output\main.o: .\HardWareDriver\stmflash.h
 .\output\main.o: User_Src\ConfigTable.h
+.\output\main.o: .\HardWareDriver\UART1.h

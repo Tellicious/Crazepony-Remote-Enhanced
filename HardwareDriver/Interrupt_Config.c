@@ -11,19 +11,19 @@ uint16_t flag10Hz,flag50Hz,flag80Hz,flag100Hz;
 
 void TIM4_IRQHandler(void) {
     if( TIM_GetITStatus(TIM4 , TIM_IT_Update) != RESET ) {     
-					if(++flag10Hzcnt == 200){//10Hz
+					if(++flag10Hzcnt >= 200){//10Hz
 									flag10Hzcnt = 0;
 									flag10Hz = 1;
 								} 
-					if(++flag50Hzcnt == 40){//50Hz
+					if(++flag50Hzcnt >= 40){//50Hz
 									flag50Hzcnt = 0;
 									flag50Hz = 1;
 								}   
-					if(++flag80Hzcnt == 25){ //80Hz
+					if(++flag80Hzcnt >= 25){ //80Hz
 									flag80Hzcnt = 0;
 									flag80Hz = 1;
 								}
-					if(++flag100Hzcnt == 20){ //100Hz
+					if(++flag100Hzcnt >= 20){ //100Hz
 									flag100Hzcnt = 0;
 									flag100Hz = 1;
 								}	
@@ -87,15 +87,15 @@ void EXTI9_5_IRQHandler(void){
 #ifdef UART1_USE_INTERRUPTS
 volatile uint8_t Udatatmp;
 void USART1_IRQHandler(void) {
-  if(USART_GetITStatus(USART1, USART_IT_TXE) != RESET){   
-    USART_SendData(USART1, UartBuf_RD(&UartTxbuf));
-    if(UartBuf_Cnt(&UartTxbuf) == 0)  
-		USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
-  }
-  else if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) {
-	USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-    Udatatmp = (uint8_t) USART_ReceiveData(USART1);
-    UartBuf_WD(&UartRxbuf,Udatatmp);
+	if(USART_GetITStatus(USART1, USART_IT_TXE) != RESET){   
+		USART_SendData(USART1, UartBuf_RD(&UartTxbuf));
+		if(UartBuf_Cnt(&UartTxbuf) == 0)  
+			USART_ITConfig(USART1, USART_IT_TXE, DISABLE);
+	}
+	else if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) {
+		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+		Udatatmp = (uint8_t) USART_ReceiveData(USART1);
+		UartBuf_WD(&UartRxbuf,Udatatmp);
 	}
 }
 #endif

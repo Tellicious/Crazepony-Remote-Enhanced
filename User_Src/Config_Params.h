@@ -13,10 +13,9 @@
 #define UART1_NO_INTERRUPTS
 #define UART1_STDIO_FUN
 
-// TIM period (TIM3 freq: 1kHz, TIM4 freq: !MHz)
-#define TIMER3_Period		1000
+// TIM period (TIM3 freq: 10kHz, TIM4 freq: 1MHz)
+#define TIMER3_Period		10000
 #define TIMER4_Period  	500		
-
 
 // LED defines
 #define signalLED GPIOA, GPIO_Pin_12
@@ -26,9 +25,6 @@
 #define led5      GPIOB, GPIO_Pin_7
 #define NOT_signalLED !(GPIOA->ODR & GPIO_Pin_12)
 #define NOT_led4 !(GPIOB->ODR & GPIO_Pin_6)
-
-
-
 
 // Timer Flags
 extern uint16_t flag10Hz,flag50Hz,flag80Hz,flag100Hz;

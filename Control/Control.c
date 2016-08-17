@@ -29,10 +29,10 @@ Date: 2016-06-10
 
 uint16_t Throttle, Roll, Pitch, Yaw;
 
-int16_t Throttle_Calibra=0;
-int16_t Pitch_Calibra   =0;
-int16_t Roll_Calibra    =0;
-int16_t Yaw_Calibra     =0;
+int16_t Throttle_Calibra = 0;
+int16_t Pitch_Calibra = 0;
+int16_t Roll_Calibra = 0;
+int16_t Yaw_Calibra = 0;
 
 #define CTRL_DISARMED				0xB6
 #define CTRL_ARMED					0x6B
@@ -125,266 +125,84 @@ void SetCenterVal(void){
 	SaveParamsToEEPROM();
 }	
 
-
-
 uint8_t ArmStatus = CTRL_DISARMED;
+uint8_t Command = 0;
+uint8_t rckCmdCount = 0;
 
+// Command 1 - Disarm
+// Throttle Down, Yaw Left
+#define DISARM_CHK (Command == 1)?(rckCmdCount++):(rckCmdCount = 1); Command = 1;
+// Command 2 - Arm
+// Throttle Down, Yaw Right
+#define ARM_CHK (Command == 2)?(rckCmdCount++):(rckCmdCount = 1); Command = 2;
+// Command 3 - IMU Calibration
+// Throttle Down, Yaw Left, Pitch Down, Roll Left
+#define IMUCAL_CHK (Command == 3)?(rckCmdCount++):(rckCmdCount = 1); Command = 3;
+// Command 4 - RC Calibration
+// Throttle Down, Yaw Left, Pitch Down, Roll Right
+#define RCCAL_CHK (Command == 4)?(rckCmdCount++):(rckCmdCount = 1); Command = 4;
 
-//--------------Arm and disarm motors via "+" key----------------//
-/*static u8 cnt = 3;
-
-void KeyArmDisarmCrazepony(void)
-{
+//------------------Disarm Motors------------------//
+void Disarm(void){
 	uint8_t i;
-	
-	if(0 == ++cnt){
-		// this to prevent overflow
-		cnt = 3;
-	}
-	
-	if(Lockflag){
-		if(cnt < 3){
-			// this to debounce key presses
-			printf("invalid key press:%d\n",cnt);
-			cnt = 0;
-			Lockflag = 0;
-		}else{
-			cnt = 0;
-		}
-
-		if(ArmStatus == CTRL_DISARMED) 
-		{
-			#ifdef UART_DEBUG
-			printf ("Arming Motors...\r\n");
-			#endif
-			for(i=0;i<5;i++){         
-				if(!CommUAVUpload(MSP_ARM_IT)){
+	// If disarm for more than 0.4 s, start disarming
+	if (rckCmdCount >= 4){
+		#ifdef UART_DEBUG
+		printf ("Disarming Motors...\r\n");
+		#endif
+		for(i = 0; i < 5; i++){         
+			if(!CommUAVUpload(MSP_DISARM_IT)){
 					break;
-				}	
-			}			
-			if(i == 5){
-				ArmStatus = CTRL_ARMED; //Armed
-				LedSet(led5,1);
-				Lockflag = 0;
-			#ifdef UART_DEBUG
-				printf("Motors armed!!!\r\n");
 			}
-
-			else {
-				printf("Motors cannot be armed!!!\r\n");
-			#endif
-			}
+		}				
+		if(i == 5){
+			ArmStatus = CTRL_DISARMED; //Disarmed
+			GPIO_WriteBit(led5, Bit_RESET);
+		#ifdef UART_DEBUG
+			printf("Motors disarmed!!!\r\n");
 		}
-			
-		else if(ArmStatus == CTRL_ARMED)
-		{
-			#ifdef UART_DEBUG
-			printf ("Disarming Motors...\r\n");
-			#endif
-			for(i=0;i<5;i++){         
-				if(!CommUAVUpload(MSP_DISARM_IT)){
-						break;
-				}
-			}				
-			if(i == 5){
-				ArmStatus = CTRL_DISARMED; //Disarmed
-				LedSet(led5,0);
-				Lockflag = 0;
-			#ifdef UART_DEBUG
-				printf("Motors disarmed!!!\r\n");
-			}
-			else {
-				printf("Motors cannot be disarmed!!!\r\n");
-			#endif
-			}
+		else {
+			printf("Motors cannot be disarmed!!!\r\n");
+		#endif
 		}
 	}
-}*/
+}
 
-//----------------Arm and disarm motors via rocker-------------------//
-uint8_t cnt_arm = 0;
-uint8_t cnt_disarm = 0;
-
-void RockerArmDisarmCrazepony(void){
+//------------------Arm Motors------------------//
+void Arm(void){
 	uint8_t i;
-	// Disarm: LH rocker bottom left position
-	if((Throttle < 1050) && (Yaw < 1100)){
-		cnt_arm = 0;
-		cnt_disarm++;
-		// If disarm for more than 0.4 s, start disarming
-		if (cnt_disarm >= 4){
-			cnt_disarm = 4;
-			#ifdef UART_DEBUG
-			printf ("Disarming Motors...\r\n");
-			#endif
-			for(i=0;i<5;i++){         
-				if(!CommUAVUpload(MSP_DISARM_IT)){
-						break;
-				}
-			}				
-			if(i == 5){
-				ArmStatus = CTRL_DISARMED; //Disarmed
-				GPIO_WriteBit(led5, Bit_RESET);
-			#ifdef UART_DEBUG
-				printf("Motors disarmed!!!\r\n");
-			}
-			else {
-				printf("Motors cannot be disarmed!!!\r\n");
-			#endif
-			}
+	// If arm for more than 0.4 s, start arming
+	if (rckCmdCount >= 4){
+		#ifdef UART_DEBUG
+		printf ("Arming Motors...\r\n");
+		#endif
+		for(i=0;i<5;i++){         
+			if(!CommUAVUpload(MSP_ARM_IT)){
+				break;
+			}	
+		}			
+		if(i == 5){
+			ArmStatus = CTRL_ARMED; //Armed
+			GPIO_WriteBit(led5, Bit_SET);
+		#ifdef UART_DEBUG
+			printf("Motors armed!!!\r\n");
 		}
-	}
-	// Arm: LH rocker bottom right position
-	else if((Throttle < 1050) && (Yaw > 1900)){
-		cnt_arm++;
-		cnt_disarm = 0;
-		// If arm for more than 0.4 s, start arming
-		if (cnt_arm >= 4){
-			cnt_arm = 4;
-			#ifdef UART_DEBUG
-			printf ("Arming Motors...\r\n");
-			#endif
-			for(i=0;i<5;i++){         
-				if(!CommUAVUpload(MSP_ARM_IT)){
-					break;
-				}	
-			}			
-			if(i == 5){
-				ArmStatus = CTRL_ARMED; //Armed
-				GPIO_WriteBit(led5, Bit_SET);
-			#ifdef UART_DEBUG
-				printf("Motors armed!!!\r\n");
-			}
-			else {
-				printf("Motors cannot be armed!!!\r\n");
-			#endif
-			}
+
+		else {
+			printf("Motors cannot be armed!!!\r\n");
+		#endif
 		}
-	}
-	else{
-		cnt_arm = 0;
-		cnt_disarm = 0;
 	}
 }
 
-/*IMUcalibrate  */
-/*void IMUcalibrate(void) {
-	  LedSet(led4,IMUcalibratflag);
-	  if(IMUcalibratflag) 
-			{
-				CommUAVUpload(MSP_ACC_CALI);
-				IMUcalibratflag = 0;
-			}
-}*/
-
-//----------------Calibrate IMU via rocker-------------------//
-
-uint8_t cnt_IMUcal = 0;
-
-void RockersIMUCalibrate(void){
-	// Calibrate mode starts when holding LH rocker in bottom left position and RH rocker in bottom right position
-	if ((ArmStatus == CTRL_DISARMED) && (Throttle < 1050) && (Yaw < 1100) && (Pitch < 1100)&& (Roll < 1100)){
-		if(0 == ++cnt_IMUcal){
-		// this to prevent overflow
-		cnt_IMUcal = 5;
-		}
-		// When hold for 0.4 s, the IMUcalibration command is sent. If hold for more than that, nothing happens
-		if (cnt_IMUcal == 4){
-			printf("azz\r\n");
-			CommUAVUpload(MSP_ACC_CALI);
-		}
-	}
-	else{
-		cnt_IMUcal = 0;
-	}
-}
-
-//----------------Calibrate remote via rocker-------------------//
-
-uint8_t cnt_rcal = 0;
-
-void RockersRCCalibrate(void){
-	// Calibrate mode starts when holding LH rocker in bottom left position and RH rocker in bottom right position
-	uint8_t led_rccal = 0;
-	if ((ArmStatus == CTRL_DISARMED) && (Throttle < 1050) && (Yaw < 1100) && (Pitch < 1100)&& (Roll > 1900)){
-		if(0 == ++cnt_rcal){
-		// this to prevent overflow
-		cnt_rcal = 5;
-		}
-		// When hold for 0.4 s, the calibration starts. If hold for more than that, nothing happens
-		if (cnt_rcal == 4){
-			// Wait for the rockers to return to central position and blink LED 5
-			while ((Get_Adc_Average(3,15) < 1900) || (Get_Adc_Average(3,15) > 2200) || (Get_Adc_Average(0,15) < 1900) || (Get_Adc_Average(0,15) > 2200) || (Get_Adc_Average(1,15) < 1900) || (Get_Adc_Average(1,15) > 2200) || (Get_Adc_Average(2,15) < 1900) || (Get_Adc_Average(2,15) > 2200)){
-				GPIO_WriteBit(led5, (BitAction)led_rccal);
-				led_rccal = !led_rccal;
-				delay_ms(200);
-			}
-			delay_ms(200);
-			SetCenterVal();
-			
-			//Re-initialize filters
-			filtInit(&filtThrottle);
-			filtInit(&filtYaw);
-			filtInit(&filtPitch);
-			filtInit(&filtRoll);
-		}
-	}
-	else{
-		cnt_rcal = 0;
-	}
-}
-
-
-
-/*
-void RockersCommands(void){
-	if (Throttle < 1050){
-		if (Yaw < 1100) {
-			cnt_arm = 0;
-			Disarm();
-			if ((ArmStatus == CTRL_DISARMED) && (Pitch < 1100)){
-				if (Roll > 1900) {
-					cnt_IMUcal = 0;
-					RCCal();
-				}
-				else if (Roll < 1100){
-					cnt_rcal = 0;
-					IMUCal();
-				}
-				else {
-					cnt_rcal = 0;
-					cnt_IMUcal = 0;
-				}
-			}
-		}
-		else if (Yaw > 1900){
-			cnt_disarm = 0;
-			cnt_IMUcal = 0;
-			cnt_rcal = 0;
-			Arm();
-		}
-	}
-	else {
-		cnt_arm = 0;
-		cnt_disarm = 0;
-		cnt_rcal = 0;
-		cnt_IMUcal = 0;
-	}
-}
-
-
-
+//------------------Calibrate RC Rockers------------------//
 void RCCal(void){
 	uint8_t led_rccal = 0;
-	if(0 == ++cnt_rcal){
-		// this to prevent overflow
-		cnt_rcal = 5;
-	}
 	// When hold for 0.4 s, the calibration starts. If hold for more than that, nothing happens
-	if (cnt_rcal == 4){
+	if (rckCmdCount == 4){
 		// Wait for the rockers to return to central position and blink LED 5
 		while ((Get_Adc_Average(3,15) < 1900) || (Get_Adc_Average(3,15) > 2200) || (Get_Adc_Average(0,15) < 1900) || (Get_Adc_Average(0,15) > 2200) || (Get_Adc_Average(1,15) < 1900) || (Get_Adc_Average(1,15) > 2200) || (Get_Adc_Average(2,15) < 1900) || (Get_Adc_Average(2,15) > 2200)){
-			LedSet(led5, led_rccal);
+			GPIO_WriteBit(led5, (BitAction)led_rccal);
 			led_rccal = (!led_rccal);
 			delay_ms(200);
 		}
@@ -399,70 +217,44 @@ void RCCal(void){
 	}
 }
 
-void IMUcal(void){
-	if(0 == ++cnt_IMUcal){
-		// this to prevent overflow
-		cnt_IMUcal = 5;
-	}
+//------------------Calibrate IMU------------------//
+void IMUCal(void){
 	// When hold for 0.4 s, the IMUcalibration command is sent. If hold for more than that, nothing happens
-	if (cnt_IMUcal == 4){
+	if (rckCmdCount == 4){
+		#ifdef UART_DEBUG
+		printf("IMU Calibration Sent\r\n");
+		#endif
 		CommUAVUpload(MSP_ACC_CALI);
-	}	
-}
-
-
-void Arm(void){
-	uint8_t i;
-	cnt_arm++;
-	// If arm for more than 0.4 s, start arming
-	if (cnt_arm >= 4){
-		cnt_arm = 4;
-		#ifdef UART_DEBUG
-		printf ("Arming Motors...\r\n");
-		#endif
-		for(i=0;i<5;i++){         
-			if(!CommUAVUpload(MSP_ARM_IT)){
-				break;
-			}	
-		}			
-		if(i == 5){
-			ArmStatus = CTRL_ARMED; //Armed
-			LedSet(led5,1);
-		#ifdef UART_DEBUG
-			printf("Motors armed!!!\r\n");
-		}
-
-		else {
-			printf("Motors cannot be armed!!!\r\n");
-		#endif
-		}
 	}
 }
 
-void Disarm(void){
-	uint8_t i;
-	cnt_disarm++;
-	// If disarm for more than 0.4 s, start disarming
-	if (cnt_disarm >= 4){
-		cnt_disarm = 4;
-		#ifdef UART_DEBUG
-		printf ("Disarming Motors...\r\n");
-		#endif
-		for(i=0;i<5;i++){         
-			if(!CommUAVUpload(MSP_DISARM_IT)){
-					break;
+//------------------Commands via Rockers------------------//
+void RockersCommands(void){
+	if (Throttle < 1050){
+		if (Yaw < 1100){
+			if ((ArmStatus == CTRL_DISARMED) && (Pitch < 1100)){
+				if (Roll > 1900) {
+					RCCAL_CHK;
+					RCCal();
+				}
+				else if (Roll < 1100){
+					IMUCAL_CHK;
+					IMUCal();
+				}
 			}
-		}				
-		if(i == 5){
-			ArmStatus = CTRL_DISARMED; //Disarmed
-			LedSet(led5,0);
-		#ifdef UART_DEBUG
-			printf("Motors disarmed!!!\r\n");
+			else{
+				DISARM_CHK;
+				Disarm();
+			}
 		}
-		else {
-			printf("Motors cannot be disarmed!!!\r\n");
-		#endif
+		else if ((Yaw > 1900) && (Roll < 1550) && (Roll > 1450) && (Pitch < 1550) && (Pitch > 1450)){
+			ARM_CHK;
+			Arm();
 		}
+		// Overflow check
+		if (rckCmdCount >= 200) rckCmdCount = 100;
+	}
+	else {
+		Command = 0;
 	}
 }
-*/

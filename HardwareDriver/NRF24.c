@@ -148,7 +148,7 @@ void NRF24_readMultRegister(uint8_t* buffer, uint8_t thisRegister, uint8_t lengt
 	SPI_RW(thisRegister);			  
 	while (length--){
 		*buffer++ = SPI_RW(0x00);
-	}	  
+	}
 	SPI_CSN_H();
 	return;
 }

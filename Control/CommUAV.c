@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "stdint.h"
 #include "NRF24.h"
-#include "control.h"
+#include "Control.h"
 #include "Config_Params.h"
 
 uint8_t sendBuf[32];
@@ -30,7 +30,7 @@ uint8_t CommUAVUpload(uint8_t cmd) {
 	uart8chk(cmd);
   		
 	uart16chk(Throttle);
-	uart16chk(Yaw);
+	uart16chk((Throttle > 1050)?(Yaw):(1500));
 	uart16chk(Pitch);
 	uart16chk(Roll);
 	return NRF24_safeWrite(sendBuf, sizeof(sendBuf), 1, 1, 8);

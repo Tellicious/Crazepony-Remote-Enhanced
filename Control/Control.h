@@ -4,11 +4,7 @@
 
 void LoadRCdata(void);
 void SetCenterVal(void);
-void RockerArmDisarmCrazepony(void);
-//void KeyArmDisarmCrazepony(void);
-void RockersIMUCalibrate(void);
-void RockersRCCalibrate(void);
-//void RockersCommands(void);
+void RockersCommands(void);
 
 #endif
 

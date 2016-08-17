@@ -22,6 +22,7 @@ extern UartBuf UartRxbuf;
 extern unsigned char rx_buffer[RX_BUFFER_SIZE];
 extern unsigned char tx_buffer[TX_BUFFER_SIZE];
 
+void UartInitVals(void);
 void UartBufClear(UartBuf *Ringbuf);
 extern void UartBuf_WD(UartBuf *Ringbuf,uint8_t DataIn);
 extern uint8_t UartBuf_RD(UartBuf *Ringbuf);

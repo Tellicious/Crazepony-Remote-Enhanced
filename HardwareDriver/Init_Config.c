@@ -60,7 +60,7 @@ void GPIO_Initialize(void){
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-	//NRF_CE--PA12
+	//NRF_CE--PA15
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15; 
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 
@@ -161,12 +161,12 @@ void TIM_Initialize(void){
 	TIM_DeInit(TIM3);
 
 	TIM_TimeBaseStructure.TIM_Period = TIMER3_Period - 1;
-	TIM_TimeBaseStructure.TIM_Prescaler = SysClock * 1000 - 1; //from n MHz to 1kHz
+	TIM_TimeBaseStructure.TIM_Prescaler = SysClock * 100 - 1; //from n MHz to 10kHz
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseStructure);
 	TIM_ClearFlag(TIM3, TIM_FLAG_Update);
-	TIM_ITConfig(TIM3, TIM_IT_Update,ENABLE);
+	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 	TIM_Cmd(TIM3,ENABLE);
 	#endif
 	
@@ -291,7 +291,7 @@ void HardwareInit(void){
 	cycleCounterInit();				   
 	SysTick_Config(SystemCoreClock / 1000);	
 	TIM_Initialize();
-	USART_Initialize(UART1_BAUDRATE); 
+	USART_Initialize(UART1_BAUDRATE);
 	SPI_Initialize();                				
   GPIO_Initialize();                 
   ADC_Initialize();										

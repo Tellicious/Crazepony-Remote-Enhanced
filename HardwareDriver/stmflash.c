@@ -22,8 +22,8 @@ moto.c file
 #include "stdio.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //stm32f103t8u6--->64K Bytes  flash
-//小容量stm32的最后一页开始地址为0x08007c00，结束地址为0x08007fff
-//每一页大小为1K个字节
+//Finally, a start address of a small capacity stm32 0x08007c00, end address 0x08007fff
+//Each page size is 1K bytes
 //////////////////////////////////////////////////////////////////////////////////
 
 //解锁STM32的FLASH

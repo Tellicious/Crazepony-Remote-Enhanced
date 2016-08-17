@@ -23,6 +23,19 @@ UartBuf UartTxbuf;
 UartBuf UartRxbuf;
 unsigned char rx_buffer[RX_BUFFER_SIZE];
 unsigned char tx_buffer[TX_BUFFER_SIZE];
+
+void UartInitVals(void){
+	UartTxbuf.Wd_Indx = 0;
+	UartTxbuf.Rd_Indx = 0;
+	UartTxbuf.Mask = TX_BUFFER_SIZE - 1;
+	UartTxbuf.pbuf = &tx_buffer[0];
+
+	UartRxbuf.Wd_Indx = 0;
+	UartRxbuf.Rd_Indx = 0;
+	UartRxbuf.Mask = RX_BUFFER_SIZE - 1;
+	UartRxbuf.pbuf = &rx_buffer[0];
+}
+
 #endif
 
 //////////////////////////////////////////////////////////////////
@@ -91,10 +104,8 @@ void UartBufClear(UartBuf *Ringbuf) {
 }
 
 void UartSendBuffer(uint8_t *dat, uint8_t len) {
-	uint8_t i;
-	for(i=0;i<len;i++){ //while (len--) {
-		UartBuf_WD(&UartTxbuf, *dat); //UartBuf_WD(&UartTxbuf, *dat++);
-		dat++;
+	while (len--) {
+		UartBuf_WD(&UartTxbuf, *dat++);
 	}
 	USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
 }

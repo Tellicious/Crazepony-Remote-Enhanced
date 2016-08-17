@@ -3,7 +3,7 @@
 .\output\commuav.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\commuav.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\commuav.o: .\HardWareDriver\NRF24.h
-.\output\commuav.o: Control\control.h
+.\output\commuav.o: Control\Control.h
 .\output\commuav.o: .\StartUp\stm32f10x.h
 .\output\commuav.o: .\StartUp\core_cm3.h
 .\output\commuav.o: .\StartUp\system_stm32f10x.h
